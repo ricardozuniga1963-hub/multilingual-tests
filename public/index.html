@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multilingual App</title>
+</head>
+<body>
+  <h1 id="title">Hello</h1>
+  <select id="language">
+    <option value="en">English</option>
+    <option value="es">Español</option>
+    <option value="ar">العربية</option>
+  </select>
+
+<script>
+    const translations = {
+      en: { title: "Hello" },
+      es: { title: "Hola" },
+      ar: { title: "مرحبا" }
+    };
+
+    const title = document.getElementById('title');
+    const select = document.getElementById('language');
+
+select.addEventListener('change', () => {
+      const lang = select.value;
+      title.textContent = translations[lang].title;
+    });
+  </script>
+</body>
+</html>
